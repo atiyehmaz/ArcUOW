@@ -11,6 +11,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { RouterModule, Routes} from '@angular/router';
+import { DepositsComponent } from './deposits/deposits.component';
+import { DepositListComponent } from './deposits/deposit-list/deposit-list.component';
+import { RegisterDepositComponent } from './deposits/register-deposit/register-deposit.component';
 
 
 @NgModule({
@@ -18,7 +21,10 @@ import { RouterModule, Routes} from '@angular/router';
     AppComponent,
     CustomersComponent,
     CustomerComponent,
-    CustomerListComponent
+    CustomerListComponent,
+    DepositsComponent,
+    DepositListComponent,
+    RegisterDepositComponent
   ],
   imports: [
     BrowserModule,

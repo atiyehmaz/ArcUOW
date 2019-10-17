@@ -11,11 +11,13 @@ namespace Service
     public interface ICustomerService : IBaseService<Customer>
     {
         IEnumerable<Customer> GetAll();
-        Customer GetById(Customer id);
-        void Insert(Customer customer);
-        void Update(Customer customer);
-        void Delete(int id);
 
-        //void Save();
+        Customer GetById(Customer id);
+
+        void Insert(Customer customer);
+
+        void Update(Customer customer);
+
+        void Delete(int id);
     }
 }

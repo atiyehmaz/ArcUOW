@@ -1,0 +1,23 @@
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">شماره حساب</th>
+      <th scope="col">نام مشتری</th>
+      <th scope="col">نام شعبه</th>
+      <th scope="col">موجودی حساب</th>
+      <th scope="col">تاریخ ثبت حساب</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of deposits; let i = index">
+        <td>{{i}}</td>
+        <td>{{item.accountNumber}}</td>
+        <td>{{item.cutomerId}}</td>
+        <td>{{item.branchId}}</td>
+        <td>{{item.balance}}</td>
+        <td>{{item.registrationDate}}</td>
+        <td><button (click)="onDelete(item.id)" class="btn btn-sm btn-outline-danger">x</button></td>
+    </tr>
+  </tbody>
+</table>

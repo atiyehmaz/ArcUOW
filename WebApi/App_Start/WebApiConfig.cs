@@ -11,10 +11,6 @@ namespace WebApi
     {
         public static void Register(HttpConfiguration config)
         {
-            //var cors = new EnableCorsAttribute("http://localhost:4200", "*", "*");
-            //config.EnableCors(cors);
-
-
 
             // Web API configuration and services
 
@@ -28,20 +24,11 @@ namespace WebApi
             );
 
 
-
             var jsonFormatter = config.Formatters.JsonFormatter;
             jsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
             config.Formatters.Remove(config.Formatters.XmlFormatter);
             jsonFormatter.SerializerSettings.DateTimeZoneHandling = Newtonsoft.Json.DateTimeZoneHandling.Utc;
         }
-        //private static void EnableCrossSiteRequests(HttpConfiguration config)
-        //{
-        //    var cors = new EnableCorsAttribute(
-        //        origins: "*",
-        //        headers: "*",
-        //        methods: "*");
-        //    config.EnableCors(cors);
-        //}
     }
 }
 

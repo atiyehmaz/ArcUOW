@@ -27,7 +27,6 @@ namespace WebApi
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-           // WebApiConfig.Register(GlobalConfiguration.Configuration);
 
             AutofacRegister();
         }
@@ -36,12 +35,16 @@ namespace WebApi
         {
             var builder = new ContainerBuilder();
             builder.RegisterApiControllers(typeof(CustomerController).Assembly);
-            //builder.RegisterGeneric(typeof(UnitOfWork<>)).As(typeof(IUnitOfWork<>)).InstancePerRequest();
+            builder.RegisterApiControllers(typeof(DepositController).Assembly);
+
             builder.RegisterType<BankDbContext>().As<DbContext>().InstancePerRequest().WithParameter("ConnectionString", "BankCS");
             builder.RegisterType(typeof(UnitOfWork)).As(typeof(IUnitOfWork)).InstancePerRequest();
 
             builder.RegisterGeneric(typeof(Repository<>)).As(typeof(IRepository<>));
+
             builder.RegisterType(typeof(CustomerService)).As<ICustomerService>();
+            builder.RegisterType(typeof(DepositService)).As<IDepositService>();
+
             builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
 
             builder.RegisterFilterProvider();

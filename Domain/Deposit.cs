@@ -15,7 +15,7 @@ namespace Domain
         [Range(1000, 10000000)]
         public int Balance { get; set; }
 
-        [Range(10, 10)]
+        [Range(5, 10)]
         [Required]
         public int AccountNumber { get; set; }
 

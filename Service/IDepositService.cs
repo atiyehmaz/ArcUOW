@@ -4,15 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Domain;
+using Service.BaseService;
 
 namespace Service
 {
-    public interface IDepositService
+    public interface IDepositService: IBaseService<Deposit>
     {
-        IEnumerable<Deposit> GetCustomers();
+        IEnumerable<Deposit> GetAll();
+
         Deposit GetById(Deposit id);
+
+        void Insert(Deposit deposit);
+
+
         void Update(Deposit deposit);
-        void Delete(Deposit deposit);
-        //void Save();
+
+        void Delete(int id);
     }
 }
