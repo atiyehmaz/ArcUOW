@@ -108,14 +108,15 @@ namespace Data.Repsitory
             }
         }
 
-        public virtual void Delete(T entity)
+        public virtual void Delete(object id)
         {
             try
             {
-                if (entity == null)
-                    throw new ArgumentNullException("entity");
+                if (id == null)
+                    throw new ArgumentNullException("id");
                 if (Context == null || _isDisposed)
                     Context = new BankDbContext();
+               T entity = Entities.Find(id);
                 Entities.Remove(entity);
                 //Context.SaveChanges(); commented out call to SaveChanges as Context save changes will be called with Unit of work
             }

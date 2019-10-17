@@ -14,7 +14,7 @@ namespace Service
         Customer GetById(Customer id);
         void Insert(Customer customer);
         void Update(Customer customer);
-        void Delete(Customer customer);
+        void Delete(int id);
 
         //void Save();
     }

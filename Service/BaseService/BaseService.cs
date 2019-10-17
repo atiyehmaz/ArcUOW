@@ -21,9 +21,9 @@ namespace Service.BaseService
             this.baseRepository = baseRepository;
         }
 
-        public void Delete(T entity)
+        public void Delete(object id)
         {
-            baseRepository.Delete(entity);
+            baseRepository.Delete(id);
         }
 
         public IEnumerable<T> GetAll()

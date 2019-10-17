@@ -1,0 +1,27 @@
+<form #form="ngForm" (submit)="onSubmit(form)" autocomplete="off">
+    <div class="form-group">
+        <label dir="rtl">نام</label>
+        <input name="FirstName" #FirstName="ngModel" [(ngModel)]="service.formData.FirstName" dir="rtl" class="form-control" required>
+        <div class="validation-error" *ngIf="FirstName.invalid && FirstName.touched">this field is required</div>
+    </div>
+    <div class="form-group">
+        <label>نام خانوادگی</label>
+        <input name="LastName" #LastName="ngModel" [(ngModel)]="service.formData.LastName" class="form-control" required>
+        </div>
+    <div class="form-group">
+        <label>آدرس</label>
+        <input name="Address" #Address="ngModel" [(ngModel)]="service.formData.Address" class="form-control" required>
+    </div>
+    <div class="form-group">
+         <label>ایمیل</label>
+        <input name="Email" #Email="ngModel" [(ngModel)]="service.formData.Email" class="form-control" required>
+        </div>
+    <div class="form-group">
+         <label>موبایل</label>
+         <input name="PhoneNumber" #PhoneNumber="ngModel" [(ngModel)]="service.formData.PhoneNumber" class="form-control" required>
+    </div>
+    <div class="form-group">
+            <button type="submit" [disabled]="form.invalid" class="btn btn btn-success">ثبت</button>
+    </div>
+
+</form>

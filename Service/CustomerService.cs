@@ -37,9 +37,9 @@ namespace Service
             customerRepository.Insert(customer);
         }
 
-        public new void Delete(Customer customer)
+        public new void Delete(int id)
         {
-            customerRepository.Delete(customer);
+            customerRepository.Delete(id);
         }
 
         //public void Save()
